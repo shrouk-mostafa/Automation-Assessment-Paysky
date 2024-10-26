@@ -5,11 +5,11 @@ The project employs a data-driven testing approach combined with the Page Object
 In addition, we use JUnit assertions to validate outcomes and Allure for comprehensive reporting, enhancing the overall testing transparency by tracking results and providing insights into test execution.
 
 ## Tools Used
-1-Selenium: For automating user interactions on the web application.
-2-Cucumber: For defining test cases in a BDD format using Gherkin syntax, promoting clarity and readability.
-3-Page Object Model (POM): A design pattern that organizes code into separate classes for locators and actions, increasing modularity and maintainability.
-4-JSON for Test Data: Enables a data-driven approach where test data is stored externally and easily updated without code changes.
-5-Jackson Library: Used for parsing JSON data to support data-driven testing.
-6-TestNG: Provides assertions to validate expected outcomes.
-7-Allure Reporting: Generates organized test reports that include logs, making it easier to analyze results and debug issues.
+### Selenium: For automating user interactions on the web application.
+### Cucumber: For defining test cases in a BDD format using Gherkin syntax, promoting clarity and readability.
+### Page Object Model (POM): A design pattern that organizes code into separate classes for locators and actions, increasing modularity and maintainability.
+### JSON for Test Data: Enables a data-driven approach where test data is stored externally and easily updated without code changes.
+### Jackson Library: Used for parsing JSON data to support data-driven testing.
+### TestNG: Provides assertions to validate expected outcomes.
+### Allure Reporting: Generates organized test reports that include logs, making it easier to analyze results and debug issues.
 This approach creates a structured, flexible test automation framework that supports rapid updates, scales easily with added test cases, and ensures high test quality and clarity.

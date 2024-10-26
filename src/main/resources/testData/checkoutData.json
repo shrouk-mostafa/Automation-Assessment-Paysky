@@ -1,0 +1,28 @@
+{
+  "checkoutData": [
+    {
+      "product": "Laptop",
+      "address": "123 Main Street",
+      "city": "New York",
+      "zipCode": "10001",
+      "phone": "1234567890",
+      "cardType": "Visa",
+      "cardNumber": "4111111111111111",
+      "expiryDate": "12/25",
+      "cvv": "123",
+      "confirmationMessage": "Your order has been placed successfully"
+    },
+    {
+      "product": "Smartphone",
+      "address": "456 Elm Street",
+      "city": "Los Angeles",
+      "zipCode": "90001",
+      "phone": "9876543210",
+      "cardType": "MasterCard",
+      "cardNumber": "5555555555554444",
+      "expiryDate": "11/26",
+      "cvv": "321",
+      "confirmationMessage": "Your order has been placed successfully"
+    }
+  ]
+}

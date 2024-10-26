@@ -3,7 +3,7 @@ package org.example.pages;
 import org.openqa.selenium.By;
 
 public class CheckoutPageLocators {
-    public By checkoutButton = By.cssSelector("button.checkout");
+    public By checkoutButton = By.cssSelector("button[data-test='proceed-1']");
     public By addressField = By.id("address");
     public By cityField = By.id("city");
     public By zipCodeField = By.id("zip");

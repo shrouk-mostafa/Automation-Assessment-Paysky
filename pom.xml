@@ -22,6 +22,29 @@
                 </includes>
             </configuration>
         </plugin>
+        <plugin>
+            <!-- https://repo.maven.apache.org/maven2/net/masterthought/cucumber-reporting/ -->
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>5.7.0</version>
+            <executions>
+                <execution>
+                    <id>execution</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                    <configuration>
+                        <projectName>Cucumber HTML Reports</projectName>
+                        <outputDirectory>${project.build.directory}</outputDirectory>
+                        <inputDirectory>${project.build.directory}</inputDirectory>
+                        <jsonFiles>
+                            <param>**/cucumber*.json</param>
+                        </jsonFiles>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
 </build>
     <properties>
@@ -35,7 +58,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.23.1</version>
+            <version>4.25.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>

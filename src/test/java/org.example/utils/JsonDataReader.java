@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class JsonDataReader {
 
-    private static final String FILE_PATH = "src/test/resources/testData/checkoutData.json";
+    private static final String FILE_PATH = "src/main/resources/testData/checkoutData.json";
 
     public static List<Map<String, String>> getCheckoutData() {
         ObjectMapper mapper = new ObjectMapper();

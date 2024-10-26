@@ -1,39 +1,44 @@
 package org.example.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CartPageActions {
     WebDriver driver;
+    WebDriverWait wait;
     CartPageLocators locators = new CartPageLocators();
 
     public CartPageActions(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    // Method to open the cart
+    // Method to open the cart and wait for any overlay (toast message) to disappear
     public void openCart() {
-        driver.findElement(locators.cartIcon).click();
+        // Wait for the toast message to disappear if present
+        waitForToastMessageToDisappear();
+        // Wait for cart icon and click it to open cart page
+        WebElement cartButton = wait.until(ExpectedConditions.elementToBeClickable(locators.cartIcon));
+        cartButton.click();
     }
-
-    // Method to verify product in the cart by name
-    public boolean isProductInCart(String expectedProductName) {
-        String actualProductName = driver.findElement(locators.productNameInCart).getText();
-        return actualProductName.equalsIgnoreCase(expectedProductName);
-    }
-
-    // Method to get the quantity of a product in the cart
-    public int getProductQuantity() {
-        String quantityText = driver.findElement(locators.productQuantity).getAttribute("value");
-        return Integer.parseInt(quantityText);
-    }
-
-    // Method to get the cart total price
-    public String getCartTotal() {
-        return driver.findElement(locators.cartTotal).getText();
-    }
-
-    // Method to proceed to checkout
     public void proceedToCheckout() {
-        driver.findElement(locators.checkoutButton).click();
+        // Wait for the toast message to disappear if present
+        waitForToastMessageToDisappear();
+        // Wait for checkout button on the cart page and click it
+        WebElement checkoutButton = wait.until(ExpectedConditions.elementToBeClickable(locators.checkoutButton));
+        checkoutButton.click();
     }
+    private void waitForToastMessageToDisappear() {
+        // Check if the toast message is present and wait for it to disappear
+        try {
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(locators.toastMessage));
+        } catch (Exception e) {
+            System.out.println("Toast message not present or already gone.");
+        }
+    }
+
 }

@@ -19,9 +19,9 @@ public class CheckoutPageActions {
     }
 
     public void proceedToCheckout() {
-        driver.findElement(locators.checkoutButton).click();
         // Wait until the "Proceed to checkout" button is clickable
-        WebElement checkoutButton = wait.until(ExpectedConditions.elementToBeClickable(locators.checkoutButton));
+        WebElement checkoutButton = wait.until(
+                ExpectedConditions.elementToBeClickable(locators.checkoutButton));
         checkoutButton.click();
     }
 
